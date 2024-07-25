@@ -2,7 +2,7 @@ function verificar(event) {
     event.preventDefault();
     let input = document.getElementById('numero');
     let display = document.getElementById('display');
-
+    
     let value = input.value;
 
     let restoDaDivisao = value%2;
@@ -14,3 +14,15 @@ function verificar(event) {
     }
 }
 
+function gerarTabuada(event){
+    event.preventDefault();
+    let input = document.getElementById('numero');
+    let display = document.getElementById('display');
+    let value = input.value;
+
+    display.innerHTML = "";
+
+    for (let index = 1 ; index <= 10 ; index++ ){
+        display.innerHTML += `${index} x ${value} = ${index*value}<br>`;
+    }
+}
