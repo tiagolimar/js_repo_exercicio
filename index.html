@@ -7,13 +7,38 @@
     <title>Exercicio Js</title>
 </head>
 <body>
-    <form class="container border border-black d-flex flex-column mt-5 p-4 rounded rounded-4">
+    <!-- <form class="container border border-black d-flex flex-column mt-5 p-4 rounded rounded-4">
         <label for="numero" class="form-label">Número</label>
         <input id="numero" type="number" class="form-control border border-dark">
         <button class="btn btn-dark mt-2 mb-4" onclick="verificar(event)">Verificar</button>
         <button class="btn btn-primary mt-2 mb-4" onclick="gerarTabuada(event)">Gerar Tabuada</button>
         <p id="display">Resultado</p>
+    </form> -->
+
+    <form class="container border border-black d-flex flex-column mt-5 p-4 rounded rounded-4">
+        <h2 class="text-center">Calculadora</h2>
+        <hr>
+
+        <div class="row">
+            <div class="col">
+                <label for="numero1" class="form-label">Número1</label>
+                <input id="numero1" type="number" class="form-control border border-dark">
+            </div>
+            <div class="col">
+                <label for="numero2" class="form-label">Número2</label>
+                <input id="numero2" type="number" class="form-control border border-dark">
+            </div>
+        </div>
+        <div class="row mt-4 mb-4">
+            <div class="col"><button onclick="soma(event)" class="btn btn-success w-100">+</button></div>
+            <div class="col"><button onclick="subtrair(event)" class="btn btn-danger w-100">-</button></div>
+            <div class="col"><button onclick="multiplicar(event)" class="btn btn-primary w-100">*</button></div>
+            <div class="col"><button onclick="dividir(event)" class="btn btn-warning w-100">/</button></div>
+            <div class="col"><button onclick="apagar(event)" class="btn btn-secondary w-100">CE</button></div>
+        </div>
+        <p id="display" class="text-center fw-bold fs-2">Resultado</p>
     </form>
     <script src="./js/script.js"></script>
+    <!-- <script src="./js/aula.js"></script> -->
 </body>
 </html>

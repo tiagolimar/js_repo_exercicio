@@ -1,28 +1,53 @@
-function verificar(event) {
-    event.preventDefault();
-    let input = document.getElementById('numero');
-    let display = document.getElementById('display');
-    
-    let value = input.value;
+let numero1 = document.getElementById('numero1');
+let numero2 = document.getElementById('numero2');
+let display = document.getElementById('display');
 
-    let restoDaDivisao = value%2;
+function imprimir(valor){
+    display.innerHTML = valor;
+}
 
-    if (restoDaDivisao == 0){
-        display.innerHTML = "O número é par";
+function verificacao(valor){
+    let num1 = parseFloat(numero1.value);
+    let num2 = parseFloat(numero2.value);
+
+    if (Number.isNaN(num1) || Number.isNaN(num2)){
+        alert('Por favor, insira dois números válidos.');
     }else{
-        display.innerHTML = "O número é ímpar";
+        imprimir(valor);
     }
 }
 
-function gerarTabuada(event){
+function soma(event) {
     event.preventDefault();
-    let input = document.getElementById('numero');
-    let display = document.getElementById('display');
-    let value = input.value;
+    let num1 = parseFloat(numero1.value);
+    let num2 = parseFloat(numero2.value);
+    verificacao(num1 + num2);
+}
 
-    display.innerHTML = "";
+function subtrair(event){
+    event.preventDefault();
+    let num1 = parseFloat(numero1.value);
+    let num2 = parseFloat(numero2.value);
+    verificacao(num1 - num2)
+}
 
-    for (let index = 1 ; index <= 10 ; index++ ){
-        display.innerHTML += `${index} x ${value} = ${index*value}<br>`;
-    }
+function multiplicar(event){
+    event.preventDefault();
+    let num1 = parseFloat(numero1.value);
+    let num2 = parseFloat(numero2.value);
+    verificacao(num1 * num2);
+}
+
+function dividir(event){
+    event.preventDefault();
+    let num1 = parseFloat(numero1.value);
+    let num2 = parseFloat(numero2.value);
+    verificacao(num1 / num2);
+}
+
+function apagar(event){
+    event.preventDefault();
+    numero1.value = 0;
+    numero2.value = 0;
+    verificacao('Resultado');
 }
